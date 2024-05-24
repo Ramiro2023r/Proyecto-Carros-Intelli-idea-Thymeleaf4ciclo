@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <link rel="stylesheet" href="Estilos/EstilosTienda.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+<header>
+    <nav>
+        <a href="MenuPrincipalAdmin.jsp">Inicio</a>
+        <a href="#qn">Sobre nosotros</a>
+        <a href="#qp">Vehiculos</a>
+        <a href="#ql">Contactanos</a>
+    </nav>
+    <section class="textos-header">
+        <h1 id="qi">SISTEMA BROSS</h1>
+        <h2>Los mejores vehiculos de Lima</h2>
+    </section>
+    <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: rgb(255, 255, 255);"></path></svg></div>
+</header>
+<h1 align="center" id="qn">Quienes somos</h1>
+<br>
+<br>
+<br>
+<div class="caj">
+    <div class="textos">
+        <h1 class="h">Somos una empresa lider en la administracion de tu negocio de venta de vehiculos al por mayor, brindamos la mejor experiencia al usuario con metodos eficientes para una mejor administracion.</h1>
+    </div>
+    <div class="image">
+        <img  src="static/img/logo34.jpg" th:src="@{/img/logo34.jpg}" alt="">
+
+    </div>
+</div>
+
+<section class="portafolio">
+    <div class="contenedor">
+        <h2 class="titulo">CATÁLOGO</h2>
+        <div class="galeria-port">
+            <div class="imagen-port">
+                <img  src="static/img/carrosDepor.png" th:src="@{/img/carrosDepor.png}" alt="">
+                <div class="hover-galeria">
+                    <img src="imagenes/icono1.png "  alt="">
+                    <p>Carros deportivos</p>
+                </div>
+            </div>
+            <div class="imagen-port">
+                <img  src="static/img/Camion.jpg" th:src="@{/img/Camion.jpg}" alt="">
+                <div class="hover-galeria">
+                    <img src="imagenes/icono1.png" alt="">
+                    <p>Camiones</p>
+                </div>
+            </div>
+            <div class="imagen-port">
+                <img  src="static/img/motos3.jpeg" th:src="@{/img/motos3.jpeg}"  alt="">
+                <div class="hover-galeria">
+                    <img src="imagenes/icono1.png" alt="">
+                    <p>Motos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<p>
+    <br>
+    <br>
+    <br>
+    <br>
+<h2 class="pro" align="center" id="qp">Vehiculos mas Vendidos</h2>
+<br>
+<br>
+<br>
+</p>
+<div class="page-content">
+    <div class="product-container">
+        <h3 class="pro">Renault Kwid</h3>
+        <img  src="static/img/renault.jpg" th:src="@{/img/renault.jpg}">
+        <h2>$62.000</h2>
+        <button class="button-add">Comprar</button>
+    </div>
+
+    <div class="product-container">
+        <h3 class="pro">Nissan</h3>
+        <img  src="static/img/nissan.jpg" th:src="@{/img/nissan.jpg}">
+        <h2>$92.000</h2>
+        <button class="button-add">Comprar</button>
+    </div>
+
+    <div class="product-container">
+        <h3 class="pro">Chevrolet</h3>
+        <img  src="static/img/chevrolet.jpg" th:src="@{/img/chevrolet.jpg}">
+        <h2>$70.000</h2>
+        <button class="button-add">Comprar</button>
+    </div>
+
+    <div class="product-container">
+        <h3 class="pro">Ford</h3>
+        <img  src="static/img/ford.jpg" th:src="@{/img/ford.jpg}">
+        <h2>$84.000</h2>
+        <button class="button-add">Comprar</button>
+    </div>
+
+    <div class="product-container">
+        <h3 class="pro">Honda</h3>
+        <img   src="static/img/motos.jpg" th:src="@{/img/motos.jpg}">
+        <h2>$130.000</h2>
+        <button class="button-add">Comprar</button>
+    </div>
+    <div class="product-container">
+        <h3 class="pro">Hyundai Camion</h3>
+        <img  src="static/img/camionable.jpg" th:src="@{/img/camionable.jpg}">
+        <h2>$84.000</h2>
+        <button class="button-add">Comprar</button>
+    </div>
+
+    <div class="product-container">
+        <h3 class="pro">KIA</h3>
+        <img  src="static/img/camionnegro.jpg" th:src="@{/img/camionnegro.jpg}">
+        <h2>$63.000</h2>
+        <button class="button-add">Comprar</button>
+    </div>
+
+    <div class="product-container">
+        <h3 class="pro">FES-234<h3>
+            <img src="static/img/pisteras.jpg" th:src="@{/img/pisteras.jpg}">
+            <h2>$79.000</h2>
+            <button class="button-add">Comprar</button>
+    </div>
+</div>
+<br>
+<br>
+
+
+<footer class="footer">
+    <div class="container1">
+        <div class="row">
+            <div class="footer-col">
+                <h4 id=ql>
+                    Compañia
+                </h4>
+                <ul class="op">
+                    <li><a href="">Acerca de nosotros</a></li>
+                    <li><a href="">Otros servicios</a></li>
+                    <li><a href="">Politica de privacidad</a></li>
+                    <li><a href="">Programa</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>
+                    Obtener ayuda
+                </h4>
+                <ul class="op">
+                    <li><a href="">FAQ</a></li>
+                    <li><a href="">Retornar</a></li>
+                    <li><a href="">Comunicacion</a></li>
+                    <li><a href="">Experiencias</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>
+                    Tienda online
+                </h4>
+                <ul class="op">
+                    <li><a href="">Ver</a></li>
+                    <li><a href="">Grande</a></li>
+                    <li><a href="">Comprar</a></li>
+                    <li><a href="">Conocer</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>
+                    Siguenos en
+                </h4>
+                <div class="social-links">
+                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<a id="ws-button" href="https://wa.me/965167568" target="_blank">
+    <img class="img-whatsapp" src="https://autoland.com.pe/wp-content/uploads/2022/09/whatsapp.png" alt="Icono de whatsapp" id="wp-autoland">
+</a>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Alumnos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+    <br>
+    <h2>Agregar Empleado</h2>
+    <br>
+    <form action="#" th:action="@{/registrarempleado}" class="form-group"
+          th:object="${empleado}" method="post">
+
+        <input type="hidden" th:field="*{id}" id="id" name="id">
+
+        <div class="form-group">
+            <label for="nombreEmpleado">Nombre</label> <input type="text"
+                                                            class="form-control" id="nombreEmpleado" th:field="*{nombreEmpleado}" name="nombreEmpleado">
+            <small class="form-text text-danger"
+                   th:if="${#fields.hasErrors('nombreEmpleado')}" th:errors="*{nombreEmpleado}">
+            </small>
+        </div>
+        <br/>
+        <div class="form-group">
+            <label for="apellidoPaternoEmpleado">Apellido Paterno</label> <input type="text"
+                                                                               class="form-control" id="apellidoPaternoEmpleado" th:field="*{apellidoPaternoEmpleado}"
+                                                                               name="apellidoPaternoEmpleado">
+
+            <small class="form-text text-danger"
+                   th:if="${#fields.hasErrors('apellidoPaternoEmpleado')}" th:errors="*{apellidoPaternoEmpleado}">
+            </small>
+
+        </div>
+        <br/>
+        <div class="form-group">
+            <label for="apellidoMaternoEmpleado">Apellido Materno</label> <input type="text"
+                                                                               class="form-control" id="apellidoMaternoEmpleado" th:field="*{apellidoMaternoEmpleado}"
+                                                                               name="apellidoMaternoEmpleado">
+            <small class="form-text text-danger"
+                   th:if="${#fields.hasErrors('apellidoMaternoEmpleado')}" th:errors="*{apellidoMaternoEmpleado}">
+            </small>
+        </div>
+        <br/>
+        <div class="form-group">
+            <label for="direccionEmpleado">Dirección</label> <input type="text"
+                                                                  class="form-control" id="direccionEmpleado" th:field="*{direccionEmpleado}"
+                                                                  name="direccionEmpleado">
+            <small class="form-text text-danger"
+                   th:if="${#fields.hasErrors('direccionEmpleado')}" th:errors="*{direccionEmpleado}">
+            </small>
+        </div>
+        <br/>
+
+        <div class="form-group">
+            <label for="telefono">Telefono</label> <input type="text"
+                                                          class="form-control" id="telefono" th:field="*{telefono}"
+                                                          name="telefono">
+            <small class="form-text text-danger"
+                   th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}">
+            </small>
+        </div>
+        <br/>
+
+
+
+
+
+
+        <div class="form-group">
+            <label for="email">Email</label> <input type="text"
+                                                    class="form-control" id="email" th:field="*{email}"
+                                                    name="email">
+            <small class="form-text text-danger"
+                   th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
+            </small>
+        </div>
+        <br/>
+
+        <div class="form-group">
+            <label for="fechana">Fecha Nacimiento:</label> <input type="date"
+                                                                          class="form-control" id="fechana" th:field="*{fechana}"
+                                                                          name="fechana" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}">
+            <small class="form-text text-danger"
+                   th:if="${#fields.hasErrors('fechana')}" th:errors="*{fechana}">
+            </small>
+        </div>
+        <br>
+
+
+
+        <div class="form-group">
+            <label for="fechain">Fecha Ingreso:</label> <input type="date"
+                                                                  class="form-control" id="fechain" th:field="*{fechain}"
+                                                                  name="fechain" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}">
+            <small class="form-text text-danger"
+                   th:if="${#fields.hasErrors('fechain')}" th:errors="*{fechain}">
+            </small>
+        </div>
+
+<br>
+
+
+
+        <div class="form-group">
+            <label for="puesto">Puesto</label> <input type="text"
+                                                              class="form-control" id="puesto" th:field="*{puesto}" name="puesto">
+            <small class="form-text text-danger"
+                   th:if="${#fields.hasErrors('puesto')}" th:errors="*{puesto}">
+            </small>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <label for="nrobanco">Nro Cuenta</label> <input type="text"
+                                                      class="form-control" id="nrobanco" th:field="*{nrobanco}" name="nrobanco">
+            <small class="form-text text-danger"
+                   th:if="${#fields.hasErrors('nrobanco')}" th:errors="*{nrobanco}">
+            </small>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <label for="salario">Salario</label> <input type="text"
+                                                      class="form-control" id="salario" th:field="*{salario}" name="salario">
+            <small class="form-text text-danger"
+                   th:if="${#fields.hasErrors('salario')}" th:errors="*{salario}">
+            </small>
+        </div>
+        <br>
+
+
+
+        <div class="form-group">
+
+            <label for="turnoEmpleado">Turno</label>
+
+            <select th:field="*{turnoEmpleado}"
+
+                    class="form-control" id="turnoEmpleado">
+
+                <option value=""> Seleccione </option>
+
+                <option th:each="dis:${listTurnoEmpleado}" th:value="${dis.id}"
+
+                        th:text="${dis.nombre}" />
+
+            </select>
+            <small class="form-text text-danger"
+                   th:if="${#fields.hasErrors('turnoEmpleado')}" th:errors="*{turnoEmpleado}">
+            </small>
+
+        </div>
+
+
+
+        <br/>
+
+        <div class="form-group">
+
+            <label for="rolEmpleado">Rol:</label>
+
+            <select th:field="*{rolEmpleado}" class="form-control" id="rolEmpleado">
+
+                <option value=""> Seleccione </option>
+
+                <option th:each="segu:${listRolEmpleado}" th:value="${segu.id}"
+
+                        th:text="${segu.nombre}" />
+
+            </select>
+            <small class="form-text text-danger"
+                   th:if="${#fields.hasErrors('rolEmpleado')}" th:errors="*{rolEmpleado}">
+            </small>
+
+        </div>
+        <br/>
+
+
+        <div class="form-group">
+
+            <label for="aportesEmpleado">Aportes:</label>
+
+            <select th:field="*{aportesEmpleado}" class="form-control" id="aportesEmpleado">
+
+                <option value=""> Seleccione </option>
+
+                <option th:each="ses:${listAportesEmpleado}" th:value="${ses.id}"
+
+                        th:text="${ses.nombre}" />
+
+            </select>
+            <small class="form-text text-danger"
+                   th:if="${#fields.hasErrors('aportesEmpleado')}" th:errors="*{aportesEmpleado}">
+            </small>
+
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success">Guardar</button>
+    </form>
+</div>
+</body>
+</html>

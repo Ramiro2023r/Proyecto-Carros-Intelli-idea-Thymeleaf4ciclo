@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oops!</title>
+    <link rel="stylesheet" type="text/css" href="static/Estilos/EstilosSeCerrada.css" th:href="@{/Estilos/EstilosSeCerrada.css}">
+
+
+</head>
+<body class="bod">
+<header >
+    <h1 class="nombre1">AutoLux|Plataforma</h1>
+</header>
+<div class="container">
+    <div class="oops">Oops!</div>
+    <div class="code">001</div>
+    <div class="message">Su sesión se ha acabado</div>
+    <div class="message">Se recomienda volver a ingresar a la Intranet</div>
+    <a th:href="@{/login}" class="btn">Volver al Inicio</a>
+    <div class="contact">¿Desea reportar algún problema? Contactenos</div>
+</div>
+</body>
+</html>

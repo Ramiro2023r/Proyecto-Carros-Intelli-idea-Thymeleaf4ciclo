@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Personas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+    <br>
+    <h2>Agregar Clientes</h2>
+    <br>
+    <form action="#" th:action="@{/registrarclientes}" class="form-group"
+          th:object="${cliente}" method="post">
+
+        <input type="hidden" th:field="*{id}" id="id" name="id">
+
+        <div class="form-group">
+            <label for="nombre">Nombre</label> <input type="text"
+                                                      class="form-control" id="nombre" th:field="*{nombre}" name="nombre">
+            <small class="form-text text-danger"
+                   th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">
+            </small>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="apellidoPaterno">ApellidoPaterno</label> <input type="text"
+                                                                        class="form-control" id="apellidoPaterno" th:field="*{apellidoPaterno}"
+                                                                        name="apellidoPaterno">
+            <small class="form-text text-danger"
+                   th:if="${#fields.hasErrors('apellidoPaterno')}" th:errors="*{apellidoPaterno}">
+            </small>
+        </div>
+        <div class="form-group">
+            <label for="apellidoMaterno">ApellidoMaterno</label> <input type="text"
+                                                                        class="form-control" id="apellidoMaterno" th:field="*{apellidoMaterno}"
+                                                                        name="apellidoMaterno">
+            <small class="form-text text-danger"
+                   th:if="${#fields.hasErrors('apellidoMaterno')}" th:errors="*{apellidoMaterno}">
+            </small>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="edad">Edad</label> <input type="text"
+                                                  class="form-control" id="edad" th:field="*{edad}"
+                                                  name="edad">
+            <small class="form-text text-danger"
+                   th:if="${#fields.hasErrors('edad')}" th:errors="*{edad}">
+            </small>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="direccion">Direccion</label> <input type="text"
+                                                            class="form-control" id="direccion" th:field="*{direccion}"
+                                                            name="direccion">
+            <small class="form-text text-danger"
+                   th:if="${#fields.hasErrors('direccion')}" th:errors="*{direccion}">
+            </small>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="telefono">Telefono</label> <input type="text"
+                                                          class="form-control" id="telefono" th:field="*{telefono}"
+                                                          name="telefono">
+            <small class="form-text text-danger"
+                   th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}">
+            </small>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="email">Email</label> <input type="text"
+                                                    class="form-control" id="email" th:field="*{email}"
+                                                    name="email">
+            <small class="form-text text-danger"
+                   th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
+            </small>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="sexo">Sexo :</label>
+            <select th:field="*{sexo}" class="form-control" id="sexo">
+                <option value=""> Seleccione </option>
+                <option th:each="sex:${listSexo}" th:value="${sex.id}"
+                        th:text="${sex.nombre}" />
+            </select>
+            <small class="form-text text-danger"
+                   th:if="${#fields.hasErrors('sexo')}" th:errors="*{sexo}">
+            </small>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success">Guardar</button>
+    </form>
+</div>
+</body>
+</html>
